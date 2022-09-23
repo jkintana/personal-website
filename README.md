@@ -12,3 +12,6 @@ This is the scope of the project:
 
 Current progress:
 - Learned about SSH and used it to commit to GitHub.
+	- But I can still learn more about this.
+- Deployed a boilerplate React app on Heroku, and connected it to my domain.
+	- Problem: It's unsecured. I'll switch to Firebase, because it automatically secures itself.
