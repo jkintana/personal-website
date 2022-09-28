@@ -29,15 +29,18 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save me from the depths of hell!
+          Jeremy's Progress: What exactly is a component?
+        </p>
+        <p>
+          Also: Hi mom and dad!
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/jkintana/personal-website"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          View this project on GitHub!
         </a>
       </header>
     </div>
