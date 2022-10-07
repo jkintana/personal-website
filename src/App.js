@@ -1,8 +1,9 @@
 // Import the functions you need from the SDKs you need
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-import React from "react";
-import Project from "./Project";
+import React, { useState, useRef, useEffect } from "react";
+import Project from "./Project/Project";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -23,8 +24,28 @@ import Project from "./Project";
 // const analytics = getAnalytics(app);
 
 function App() {
+  const [projectNameArray, setProjectNameArray] = useState([]);
+  const projectNameInput = useRef();
+
+  function addToProjectNameArray(e) {
+    const projectName = projectNameInput.current.value;
+    setProjectNameArray(projectNameArray.push(projectName));
+  }
+
+  function clearProjectNameArray(e) {
+    setProjectNameArray([]);
+  }
+
   return (
-    <Project />
+    <>
+      <h1>Add a project here:</h1>
+      <input ref={projectNameInput} type='text' />
+      <br />
+      <button onClick={ addToProjectNameArray }>Add</button>
+      <button onClick={ clearProjectNameArray }>Clear</button>
+      <br />
+      <Project name='TESTING' />
+    </>
   );
 }
 
