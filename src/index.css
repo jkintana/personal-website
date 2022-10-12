@@ -9,7 +9,7 @@ h1 {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 ul {
