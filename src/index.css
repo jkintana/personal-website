@@ -1,5 +1,8 @@
 body {
   font-family: "Lucida Console", "Courier New", monospace;
+  background-image: url("../public/background.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
   background-color: #ffcc00;
 }
 
@@ -19,10 +22,6 @@ ul {
   overflow: hidden;
 }
 
-li {
-  float: left;
-}
-
 li a {
   display: block;
   color: black;
@@ -30,8 +29,15 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
   border-radius: 5%;
+  transition: 0.5s;
 }
 
 li a:hover {
-  background-color: white;
+  font-weight: bolder;
+  font-size: larger;
+  transition: 0.5s;
+}
+
+.profile {
+  text-align: center;
 }

@@ -4,12 +4,8 @@ import App from './App';
 import './index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const reactRender = () => {
-  root.render(
-    <React.StrictMode>
-      <App/>
-    </React.StrictMode>
-  )
-}
-
-setInterval(reactRender, 10);
+root.render(
+  <React.StrictMode>
+    <App/>
+  </React.StrictMode>
+)

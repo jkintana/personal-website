@@ -5,7 +5,7 @@ function Clock()  {
   currentTime = currentTime.toFixed(10);
 
   return (
-    <div>
+    <div class="clock">
       <h1>Jeremy is {currentTime} years old.</h1>
     </div>
   )
