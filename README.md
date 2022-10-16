@@ -10,6 +10,7 @@ This is the scope of the project:
 
 The project scope does NOT include:
 - Firebase databases.
+- Well, I guess we're backtracking on that, huh?
 
 Current progress:
 - Day 1 (Sept 22):

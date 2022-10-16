@@ -1,8 +1,8 @@
 body {
   font-family: "Lucida Console", "Courier New", monospace;
   background-image: url("../public/background.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   background-color: #ffcc00;
 }
 
@@ -11,6 +11,11 @@ h1 {
 }
 
 .navbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+
   display: flex;
   justify-content: center;
 }
@@ -39,5 +44,13 @@ li a:hover {
 }
 
 .profile {
+  padding-top: 30px;
   text-align: center;
+}
+
+.profile h3 {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }

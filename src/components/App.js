@@ -4,7 +4,7 @@ import { getDatabase } from "firebase/database";
 
 import React from "react";
 import Navbar from './Navbar/Navbar';
-import Clock from './Clock/Clock';
+// import Clock from './Clock/Clock';
 import Profile from './Profile/Profile';
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -23,12 +23,9 @@ const firebaseConfig = {
   databaseURL: "https://personal-website-323f6-default-rtdb.firebaseio.com/"
 };
 
-// FORCE PUSH AND SQUASH
-// ENVIRONMENT VARIABLES
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+// const database = getDatabase(app);
 
 // Ideas:
 // Workout Tracker
