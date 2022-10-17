@@ -15,6 +15,9 @@ export default function Profile() {
       <br></br>
       <br></br>
       Let’s get connected! Message me at kintana@wisc.edu or at linkedin.com/in/jkintana.
+      <br></br>
+      <br></br>
+      Note: This website is still under construction. View the code <a href='https://github.com/jkintana/personal-website'>here</a>.
       </h3>
     </div>
   )
