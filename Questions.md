@@ -1,7 +1,8 @@
 ### Questions I've Asked
 
 - What is a DOM?
-  - A: Stands for Document Object Model. Essentially the representation of the webpage as a file.
+  - A: Stands for Document Object Model. An object representation of written HTML files that can be manipulated with code.
+  https://www.freecodecamp.org/news/dom-explained-everything-you-need-to-know-about-the-document-object-model/
   - What is a Virtual DOM?
 
 - What is SSH?
@@ -25,6 +26,7 @@
 
 - In terms of React...
   - What are components?
+    - What does it mean for a component to mount?
   - What is "state"?
     - A: props (short for “properties”) and state are both plain JavaScript objects. While both hold information that influences the output of render, they are different in one important way: props get passed to the component (similar to function parameters) whereas state is managed within the component (similar to variables declared within a function). Source: (https://reactjs.org/docs/faq-state.html)
     - What is Redux, and why do we need it?

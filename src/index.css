@@ -45,13 +45,13 @@ h1 {
   padding: 14px 16px;
   text-decoration: none;
   border-radius: 5%;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 
 .navbarComponent li a:hover {
   font-weight: bolder;
   font-size: larger;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 
 /* 
