@@ -15,7 +15,7 @@ export default function home() {
         I previously interned at AI Camp, where I created historical data reports using Python Pandas and Matplotlib, contributed to a codebase that utilized Django and PostgreSQL, and worked in a Scrum environment.
         <br></br>
         <br></br>
-        I'm currently a member of the Data Science for Sustainable Development club where I help create data science solutions for nonprofits. I'm passionate about educational learning theory, programming, and anything science fiction or philosophy.
+        At UW-Madison, I'm a member of the Data Science for Sustainable Development club and the Effective Altruism chapter. I'm passionate about educational learning theory, programming, and anything science fiction or philosophy.
         <br></br>
         <br></br>
         Let’s get connected! Message me via <a href='mailto:kintana@wisc.edu'>email</a> or <a href='https://linkedin.com/in/jkintana'>LinkedIn</a>.
