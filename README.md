@@ -1,34 +1,49 @@
-# personal-website
+# Welcome to [Astro](https://astro.build)
 
-This is the scope of the project:
-- Create a static ReactJS website.
-- Point it to my custom domain on Google Domains, jkintana.net
-- The website contents should be minimal, but should include:
-	- A home page, which includes my bio.
-	- A link to a secondary page, which is my personal blog. This has a link to:
-		- My writeup on the CDIS panel.
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
 
-The project scope does NOT include:
-- Firebase databases.
-- Well, I guess we're backtracking on that, huh?
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-Current progress:
-- Day 1 (Sept 22):
-	- Learned about SSH and used it to commit to GitHub.
-	- Still very vague on this. Currently, I'm using Git commands, instead of the Git desktop. Current questions still include: what's a detached head, and how do I... reattach it?
-- Day 2 (Sept 23):
-	- Deployed a boilerplate React app on Heroku, and connected it to my domain.
-	- Problem: It's unsecured. Also, it's complicated. I'll switch to Firebase, because it automatically secures itself, and I don't have to finangle with SSL certificates.
-- Day 3 (Sept 24):
-	- I now have the default React website hosted on my website, jkintana.net. I connected it with Firebase hosting.
-	- Problem: "Learning React" is a BIG statement. Let's break it down.
-		- I have found a book on React. This is pretty good, because I don't just want to learn this superficially, I want to know what I'm doing. I built websites three years ago and have no memory of how I did it, because it was all done by copying and pasting code without understanding of the fundamentals.
-- Day 4 (Sept 25):
-	- Busy. No coding done today.
-- Day 5 (Sept 26):
-	- Got myself up to speed with JS: github.com/jkintana/javascript-exercises
-		- I basically did exercise 1 & 2, then skipped to 13.
-- Day 6 (Sept 27)
-	- Watched Firebase's videos on [React](https://www.youtube.com/watch?v=Tn6-PIqc4UM), [Redux](https://www.youtube.com/watch?v=_shA5Xwe8_4), and [Firebase](https://www.youtube.com/watch?v=vAoB4VbhRzM) to help me figure out exactly what I'm playing with here.
-	- Created a .command file that automatically creates a React build and then spins up a local Firebase emulator. Very important if I want to see what I'm doing.
-	- Still trying to figure out components...
+![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                | Action                                             |
+| :--------------------- | :------------------------------------------------- |
+| `npm install`          | Installs dependencies                              |
+| `npm run dev`          | Starts local dev server at `localhost:3000`        |
+| `npm run build`        | Build your production site to `./dist/`            |
+| `npm run preview`      | Preview your build locally, before deploying       |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `npm run astro --help` | Get help using the Astro CLI                       |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
