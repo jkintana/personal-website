@@ -3,33 +3,32 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="JK">
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+		<h1>Hi! My name is <span class="text-gradient">Jeremy Kintana</span>.</h1>
+		<p class="description">
+			I'm a highly driven freshman CS student at the <strong>University of
+				Wisconsin-Madison</strong>, currently building skills in web development.
+				Previously, I interned at <strong>AI Camp</strong>. I created
+				historical data reports using Python Pandas and Matplotlib, contributed
+				to a codebase that utilized Django and PostgreSQL, and worked in a Scrum
+				environment.
+		</p>
+		<p class="description">
+			Currently, I'm an active member of the <strong>Data Science for Sustainable
+				Development Club</strong> and the <strong>Effective Altruism club</strong>.
+				I'm passionate about educational learning theory, programming, and anything
+				science fiction or philosophy.
+		</p>
+		<p class="description">
+			Let's get connected! Email me at <a href="mailto:kintana@wisc.edu">
+				kintana@wisc.edu</a> or message me on <a href="linkedin.com/in/jkintana">LinkedIn</a>.
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
+				href="https://github.com/jkintana/personal-website/"
+				title="Source Code"
+				body="This website is an active project! View it here."
 			/>
 		</ul>
 	</main>
@@ -44,6 +43,7 @@ import Card from '../components/Card.astro';
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
+		color: white;
 		margin: 0;
 	}
 	.text-gradient {
@@ -53,7 +53,7 @@ import Card from '../components/Card.astro';
 		background-size: 400%;
 		background-position: 0%;
 	}
-	.instructions {
+	.description {
 		line-height: 1.6;
 		margin: 1rem 0;
 		border: 1px solid rgba(var(--accent), 25%);
@@ -61,7 +61,7 @@ import Card from '../components/Card.astro';
 		padding: 1rem;
 		border-radius: 0.4rem;
 	}
-	.instructions code {
+	.description code {
 		font-size: 0.875em;
 		font-weight: bold;
 		background: rgba(var(--accent), 12%);
@@ -69,9 +69,45 @@ import Card from '../components/Card.astro';
 		border-radius: 4px;
 		padding: 0.3em 0.45em;
 	}
-	.instructions strong {
+	.description strong {
 		color: rgb(var(--accent));
 	}
+	.description a {
+		color:black;
+	}
+	.description a:is(:hover) {
+		transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+		color: rgb(var(--accent));
+	}
+
+	/*
+		.link-card > a {
+		width: 100%;
+		text-decoration: none;
+		line-height: 1.4;
+		padding: 1rem 1.3rem;
+		border-radius: 0.35rem;
+		color: #111;
+		background-color: white;
+		opacity: 0.8;
+	}
+	h2 {
+		margin: 0;
+		font-size: 1.25rem;
+		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+		color: #444;
+	}
+	.link-card:is(:hover, :focus-within) {
+		background-position: 0;
+	}
+	.link-card:is(:hover, :focus-within) h2 {
+		color: rgb(var(--accent));
+	}
+	*/
 	.link-card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
