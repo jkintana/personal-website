@@ -5,11 +5,24 @@ import Card from '../components/Card.astro';
 
 <Layout title="JK">
 	<main>
-		<h1>Hi! I'm <span class="text-gradient">Jeremy Kintana</span>.</h1>
+		<div class="profile-grid">
+			<div class="photo">
+				<iframe
+					src="assets/Headshot.jpeg"
+					width="190px"
+					height="190px"
+					id="profile-photo"
+				></iframe>
+			</div>
+			<div class="caption">
+				<h1>Hi! I'm <span class="text-gradient">Jeremy Kintana</span>.</h1>
+				<p>
+					I'm a highly driven CS student at the <strong>University of Wisconsin-Madison</strong>.
+				</p>
+			</div>
+		</div>
 		<p class="description">
-			I'm a highly driven freshman CS student at the <strong>University of
-				Wisconsin-Madison</strong>, currently building skills in web development.
-				Previously, I interned at <strong>AI Camp</strong>. I created
+			Previously, I interned at <strong>AI Camp</strong>. I created
 				historical data reports using Python Pandas and Matplotlib, contributed
 				to a codebase that utilized Django and PostgreSQL, and worked in a Scrum
 				environment.
@@ -31,7 +44,7 @@ import Card from '../components/Card.astro';
 				body="This website is an active project! View it on my GitHub."
 			/>
 			<Card
-				href="/Resume.pdf"
+				href="assets/Resume.pdf"
 				title="Resumé"
 				body="If you're a recruiter (or just curious!), my resumé is one click away."
 			/>
@@ -42,14 +55,31 @@ import Card from '../components/Card.astro';
 <style>
 	main {
 		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+		padding: 2rem;
+		max-width: 80ch;
 	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
 		color: black;
 		margin: 0;
+	}
+	strong {
+		color: rgb(var(--main));
+	}
+	.profile-grid {
+		display: flex;
+		margin: auto;
+		/* max-width: 80ch; */
+	}
+	.profile-grid > div {
+		margin: 5px;
+	}
+	#profile-photo {
+		border-radius: 0.35em;
+	}
+	.caption {
+		padding-top: 30px;
 	}
 	.text-gradient {
 		background-image: var(--accent1-gradient);
@@ -65,6 +95,7 @@ import Card from '../components/Card.astro';
 		background-color: white;
 		padding: 1rem;
 		border-radius: 0.4rem;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 	}
 	.description code {
 		font-size: 0.875em;
@@ -73,9 +104,6 @@ import Card from '../components/Card.astro';
 		color: rgb(var(--main));
 		border-radius: 4px;
 		padding: 0.3em 0.45em;
-	}
-	.description strong {
-		color: rgb(var(--main));
 	}
 	.description a {
 		color:black;
@@ -87,7 +115,7 @@ import Card from '../components/Card.astro';
 	.link-card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
+		gap: 0.5rem;
 		padding: 0;
 	}
 </style>
