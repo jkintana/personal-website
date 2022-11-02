@@ -1,0 +1,33 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Card from '@components/Card.astro';
+import { getBlogPosts } from '@util/getBlogPosts';
+
+const allPosts = await getBlogPosts();
+---
+<Layout title="JK - Blog">
+  <main>
+    <ul class='link-card-grid'>
+      {allPosts.map((post) => (
+        <Card
+          href={post.params.slug || './'}
+          title={post.props.title || 'Error: Title Not Found'}
+          body={post.props.body || 'Error: Description Not Found'}
+        />
+      ))}
+      <Card
+        href="../"
+        title="Back"
+        body=""
+      />
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  .link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 0.5rem;
+	}
+</style>
