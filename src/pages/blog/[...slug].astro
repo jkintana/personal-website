@@ -1,0 +1,50 @@
+---
+import contentful from 'contentful';
+import type { TypeBlogPost, TypeBlogPostFields } from 'src/env';
+
+export async function getStaticPaths() {
+  const client = contentful.createClient({
+    accessToken: import.meta.env.SECRET_API_KEY,
+    space: import.meta.env.SECRET_SPACE_ID
+  })
+
+  async function getAllBlogPosts() : Promise<contentful.EntryCollection<TypeBlogPost>> {
+    return await client.getEntries({
+      content_type: "blogPost"
+    })
+  }
+  
+  async function getBlogData() : Promise<TypeBlogPostFields[]> {
+    var pages : TypeBlogPostFields[] = [];
+    return getAllBlogPosts().then((entries) => {
+      for(let i = 0; i < entries.items.length; i++) {
+        pages.push(entries.items[i].fields as TypeBlogPostFields);
+      }
+      return pages;
+    })
+  }
+
+  return getBlogData().then((values) => {
+    return values.map(({ slug, title, body }) => {
+      return {
+        params: { slug },
+        props: { title, body }
+      };
+    });
+  })
+}
+
+const { title, body } = Astro.params;
+---
+<html>
+  <head>
+    <title>{title}</title>
+  </head>
+  <body>
+    <h1>{title}</h1>
+    <h1>
+      Testing.
+    </h1>
+    <p>{body}</p>
+  </body>
+</html>
