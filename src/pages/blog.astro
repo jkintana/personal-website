@@ -7,6 +7,10 @@ const allPosts = await getBlogPosts();
 ---
 <Layout title="JK - Blog">
   <main>
+    <form>
+      <input type='text'>
+      <input type='submit'>
+    </form>
     <ul class='link-card-grid'>
       {allPosts.map((post) => (
         <Card
@@ -25,6 +29,10 @@ const allPosts = await getBlogPosts();
 </Layout>
 
 <style>
+  ul {
+		list-style: none;
+		padding-left: 0px;
+	}
   .link-card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));

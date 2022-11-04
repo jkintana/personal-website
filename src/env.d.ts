@@ -1,4 +1,5 @@
-/// <reference types="astro/client" />
+// <reference types="astro/client" />
+///  <reference types="@astrojs/image/client" />
 
 import type * as Contentful from "contentful";
 

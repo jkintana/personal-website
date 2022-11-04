@@ -8,5 +8,6 @@
       "@pages/*": ["src/pages/*"],
       "@util/*": ["src/util/*"],
     },
+    "types": ["@astrojs/image/client"],
   },
 }

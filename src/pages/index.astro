@@ -1,15 +1,25 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
+import { Image } from '@astrojs/image/components';
 ---
 
 <Layout title="JK">
 	<main>
 		<div class="profile-flexbox">
-			<img
+			<!-- <img
 				id="profile-photo"
 				src="./assets/Headshot.png"
 				alt="Headshot of a college student"
+			/> -->
+			<Image
+				id='profile-photo'
+				src='/assets/Headshot.png'
+				alt='Headshot of a college student'
+				width='190'
+				height='190'
+				format='png'
+				quality={100}
 			/>
 			<div class="caption">
 				<h1>Hi! I'm <span class="text-gradient">Jeremy Kintana</span>.</h1>
@@ -137,6 +147,10 @@ import Card from '@components/Card.astro';
 	}
 	.description a:is(:hover) {
 		text-decoration: none;
+	}
+	ul {
+		list-style: none;
+		padding-left: 0px;
 	}
 	.link-card-grid {
 		display: grid;
