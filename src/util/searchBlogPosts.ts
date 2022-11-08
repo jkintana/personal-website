@@ -1,4 +1,4 @@
-import { getBlogPosts } from "@util/getBlogPosts";
+import { getBlogPosts } from "@util/contentful";
 
 export async function searchBlogPosts() {
   console.log(await getBlogPosts());

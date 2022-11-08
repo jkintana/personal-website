@@ -1,11 +1,44 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
-import { getBlogPosts } from '@util/getBlogPosts';
+import type { BlogPost } from '@util/contentful';
+import { contentfulClient } from '@util/contentful';
 
-const allPosts = await getBlogPosts();
+const entries = await contentfulClient.getEntries<BlogPost>({
+  content_type: "blogPost",
+});
+
+const posts = entries.items.map((item) => {
+  const { title, date, description, slug } = item.fields;
+  return {
+    title,
+    slug,
+    description,
+    date: new Date(date).toLocaleDateString()
+  };
+});
 ---
-<Layout title="JK - Blog">
+<html lang="en">
+  <head>
+    <title>My Blog</title>
+  </head>
+  <body>
+    <h1>My Blog</h1>
+    <ul>
+      {posts.map((post) => (
+        <li>
+          <a href={post.slug}>
+            <h2>{post.title}</h2>
+          </a>
+          <time>{post.date}</time>
+          <p>{post.description}</p>
+        </li>
+      ))}
+    </ul>
+  </body>
+</html>
+
+<!-- <Layout title="JK - Blog">
   <main>
     <form>
       <input type='text'>
@@ -38,4 +71,4 @@ const allPosts = await getBlogPosts();
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 0.5rem;
 	}
-</style>
+</style> -->

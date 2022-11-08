@@ -1,70 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="generator" content="Astro v1.6.2">
-		<title>JK - Blog</title>
-	<link rel="stylesheet" href="/assets/blog.72d4d52a.css" />
-<link rel="stylesheet" href="/assets/blog.2c058614.css" /></head>
-	<body>
-		<main class="astro-LQWZF2NC">
-    <form class="astro-LQWZF2NC">
-      <input type="text" class="astro-LQWZF2NC">
-      <input type="submit" class="astro-LQWZF2NC">
+  <head>
+    <title>My Blog</title>
+  </head>
+  <body>
+    <h1>My Blog</h1>
+    <ul>
+      <li>
+          <a href="bud-nornes">
+            <h2>Bud Nornes</h2>
+          </a>
+          <time>11/8/2022</time>
+          <p>Larry B. &quot;Bud&quot; Nornes (born March 21, 1943) is an American politician, businessman, and broadcaster who served as a member of the Minnesota House of Representatives from 1997 to 2021.</p>
+        </li><li>
+          <a href="kaper-koraon-treasure">
+            <h2>Kaper Koraon Treasure</h2>
+          </a>
+          <time>11/8/2022</time>
+          <p>The Kaper Koraon Treasure is a Byzantine silver treasure consisting of 56 individual silver items originating from Syria in the sixth and seventh centuries.</p>
+        </li>
+    </ul>
+  </body>
+</html>
+
+<!-- <Layout title="JK - Blog">
+  <main>
+    <form>
+      <input type='text'>
+      <input type='submit'>
     </form>
-    <ul class="link-card-grid astro-LQWZF2NC">
-      <li class="link-card astro-FVYHKR4O">
-	<a href="peter-johansson-swedish-footballer" class="astro-FVYHKR4O">
-		<h2 class="astro-FVYHKR4O">
-			Peter Johansson (Swedish footballer)
-			<span class="astro-FVYHKR4O">&rarr;</span>
-		</h2>
-		<p class="astro-FVYHKR4O">
-			Peter &quot;Kosta&quot; Johansson (born 03 September 1956) is a Swedish former football player and manager who last worked as director of football at IFK Värnamo.
-		</p>
-	</a>
-</li>
-
-<li class="link-card astro-FVYHKR4O">
-	<a href="turbo-equalizer" class="astro-FVYHKR4O">
-		<h2 class="astro-FVYHKR4O">
-			Turbo equalizer
-			<span class="astro-FVYHKR4O">&rarr;</span>
-		</h2>
-		<p class="astro-FVYHKR4O">
-			In digital communications, a turbo equalizer is a type of receiver used to receive a message corrupted by a communication channel with intersymbol interference (ISI).
-		</p>
-	</a>
-</li>
-
-<li class="link-card astro-FVYHKR4O">
-	<a href="jobs-daughters-international" class="astro-FVYHKR4O">
-		<h2 class="astro-FVYHKR4O">
-			Job&#39;s Daughters International
-			<span class="astro-FVYHKR4O">&rarr;</span>
-		</h2>
-		<p class="astro-FVYHKR4O">
-			Job&#39;s Daughters International is a Masonic affiliated youth organization for girls and young women aged 10 to 20.
-		</p>
-	</a>
-</li>
-
-
-      <li class="link-card astro-FVYHKR4O">
-	<a href="../" class="astro-FVYHKR4O">
-		<h2 class="astro-FVYHKR4O">
-			Back
-			<span class="astro-FVYHKR4O">&rarr;</span>
-		</h2>
-		<p class="astro-FVYHKR4O">
-			
-		</p>
-	</a>
-</li>
-
-
+    <ul class='link-card-grid'>
+      {allPosts.map((post) => (
+        <Card
+          href={post.params.slug || './'}
+          title={post.props.title || 'Error: Title Not Found'}
+          body={post.props.body || 'Error: Description Not Found'}
+        />
+      ))}
+      <Card
+        href="../"
+        title="Back"
+        body=""
+      />
     </ul>
   </main>
-	
-</body></html>
+</Layout>
+
+<style>
+  ul {
+		list-style: none;
+		padding-left: 0px;
+	}
+  .link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 0.5rem;
+	}
+</style> -->
