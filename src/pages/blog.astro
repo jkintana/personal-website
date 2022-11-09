@@ -1,22 +1,22 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
-import { getBlogPosts } from '@util/getBlogPosts';
+import { getBlogPosts } from '@util/contentful';
 
-const allPosts = await getBlogPosts();
+const posts = await getBlogPosts();
 ---
 <Layout title="JK - Blog">
   <main>
-    <form>
+    <!-- <form>
       <input type='text'>
       <input type='submit'>
-    </form>
+    </form> -->
     <ul class='link-card-grid'>
-      {allPosts.map((post) => (
+      {posts.map((post) => (
         <Card
-          href={post.params.slug || './'}
-          title={post.props.title || 'Error: Title Not Found'}
-          body={post.props.body || 'Error: Description Not Found'}
+          href={'/blog/' + post.slug || './'}
+          title={post.title || 'Error: Title Not Found'}
+          body={post.description || 'Error: Description Not Found'}
         />
       ))}
       <Card

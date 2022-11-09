@@ -1,38 +1,26 @@
 ---
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import Layout from "@layouts/Layout.astro";
-import Card from "@components/Card.astro";
-import { getBlogPosts } from '@util/getBlogPosts';
+import { BlogPost, getBlogPosts } from "@util/contentful";
 
 export async function getStaticPaths() {
-  return await getBlogPosts();
+  const blogPosts = await getBlogPosts();
+
+  const pages = blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: {
+      title: post.title,
+      content: documentToHtmlString(post.content),
+      date: new Date(post.date).toLocaleDateString(),
+    },
+  }));
+  return pages;
 }
 
-const { title, body } = Astro.props;
+const { content, title, date } = Astro.props;
 ---
-<Layout title="JK - "{ title }>
-  <h1>{title}</h1>
-  <p class='description'>{body}</p>
-  <Card
-    href="../"
-    title="Back"
-    body=""
-  />
+<Layout title={ title }>
+  <main>
+    <article set:html={ content }></article>
+  </main>
 </Layout>
-
-<style>
-  h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		color: black;
-		margin: 0;
-	}
-  .description {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--main), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-	}
-</style>
