@@ -1,55 +1,22 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
-import type { BlogPost } from '@util/contentful';
-import { contentfulClient } from '@util/contentful';
+import { getBlogPosts } from '@util/contentful';
 
-const entries = await contentfulClient.getEntries<BlogPost>({
-  content_type: "blogPost",
-});
-
-const posts = entries.items.map((item) => {
-  const { title, date, description, slug } = item.fields;
-  return {
-    title,
-    slug,
-    description,
-    date: new Date(date).toLocaleDateString()
-  };
-});
+const posts = await getBlogPosts();
 ---
-<html lang="en">
-  <head>
-    <title>My Blog</title>
-  </head>
-  <body>
-    <h1>My Blog</h1>
-    <ul>
-      {posts.map((post) => (
-        <li>
-          <a href={post.slug}>
-            <h2>{post.title}</h2>
-          </a>
-          <time>{post.date}</time>
-          <p>{post.description}</p>
-        </li>
-      ))}
-    </ul>
-  </body>
-</html>
-
-<!-- <Layout title="JK - Blog">
+<Layout title="JK - Blog">
   <main>
-    <form>
+    <!-- <form>
       <input type='text'>
       <input type='submit'>
-    </form>
+    </form> -->
     <ul class='link-card-grid'>
-      {allPosts.map((post) => (
+      {posts.map((post) => (
         <Card
-          href={post.params.slug || './'}
-          title={post.props.title || 'Error: Title Not Found'}
-          body={post.props.body || 'Error: Description Not Found'}
+          href={'/blog/' + post.slug || './'}
+          title={post.title || 'Error: Title Not Found'}
+          body={post.description || 'Error: Description Not Found'}
         />
       ))}
       <Card
@@ -71,4 +38,4 @@ const posts = entries.items.map((item) => {
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 0.5rem;
 	}
-</style> -->
+</style>

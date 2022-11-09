@@ -1,7 +1,7 @@
-import contentful from 'contentful';
-import type { TypeBlogPost, TypeBlogPostFields } from 'src/env';
+import contentful from 'contentful'
+import type { Document } from "@contentful/rich-text-types";
 
-export const contentfulClient = contentful.createClient({
+const contentfulClient = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE_ID,
   accessToken: import.meta.env.DEV
     ? import.meta.env.CONTENTFUL_PREVIEW_TOKEN
@@ -9,31 +9,21 @@ export const contentfulClient = contentful.createClient({
   host: import.meta.env.DEV ? "preview.contentful.com" : "cdn.contentful.com",
 });
 
-export async function getBlogPosts() {
-  const client = contentfulClient;
-  
-  async function getAllBlogPosts() : Promise<contentful.EntryCollection<TypeBlogPost>> {
-    return await client.getEntries({ content_type: "blogPost" });
-  }
-  
-  async function getBlogData() : Promise<TypeBlogPostFields[]> {
-    return getAllBlogPosts().then((entries) => {
-      var pages : TypeBlogPostFields[] = [];
-      for(let i = 0; i < entries.items.length; i++) {
-        pages.push(entries.items[i].fields as TypeBlogPostFields);
-      }
-      return pages;
-    })
-  }
+export interface BlogPost {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  content: Document;
+}
 
-  console.log(await getBlogData());
+export async function getBlogPosts() : Promise<BlogPost[]> {
+  let entries = await contentfulClient.getEntries({ content_type: "blogPost" });
+  let blogList:BlogPost[] = [];
 
-  // return getBlogData().then((values) => {
-  //   return values.map(({ slug, title, body }) => {
-  //     return {
-  //       params: { slug },
-  //       props: { title, body }
-  //     };
-  //   });
-  // })
+  entries.items.forEach((entry) => {
+    blogList.push(entry.fields as BlogPost);
+  });
+
+  return blogList;
 }

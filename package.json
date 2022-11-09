@@ -12,8 +12,9 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.11.1",
+    "@contentful/rich-text-html-renderer": "^15.13.1",
     "astro": "^1.6.0",
-    "contentful": "^9.2.9",
+    "contentful": "^9.2.10",
     "dotenv": "^16.0.3",
     "sharp": "^0.31.2"
   },
