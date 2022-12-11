@@ -13,7 +13,8 @@ TODO:
 - https://recwell.wisc.edu/liveusage/
 - Writeup and post
 - Writeup bookshelf
+- Writeup now page
+- Writeup impossible list
 
-Finish by this weekend. Move to PROJECT 1.
 https://fireship.io/lessons/web-scraping-guide/
 https://www.youtube.com/watch?v=-MTSQjw5DrM

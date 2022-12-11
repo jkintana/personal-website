@@ -2,6 +2,8 @@
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
 import { Image } from '@astrojs/image/components';
+
+console.log("Hey!");
 ---
 
 <Layout title="JK">
@@ -19,21 +21,14 @@ import { Image } from '@astrojs/image/components';
 			<div class="caption">
 				<h1>Hi! I'm <span class="text-gradient">Jeremy Kintana</span>.</h1>
 				<p>
-					I'm a highly driven CS student at the <strong>University of Wisconsin-Madison</strong>.
+					I'm a CS undergrad at the <strong>University of Wisconsin-Madison</strong>.
 				</p>
 			</div>
 		</div>
 		<p class="description">
-			Previously, I interned at <strong>AI Camp</strong>. I created
-				historical data reports using Python Pandas and Matplotlib, contributed
-				to a codebase that utilized Django and PostgreSQL, and worked in a Scrum
-				environment.
-		</p>
-		<p class="description">
-			Currently, I'm an active member of the <strong>Data Science for Sustainable
+			At UW, I'm an active member of the <strong>Data Science for Sustainable
 				Development Club</strong> and the <strong>Effective Altruism Club</strong>.
-				I'm passionate about educational learning theory, programming, and anything
-				science fiction or philosophy.
+				Currently fascinated by educational learning theory, programming, and philosophy.
 		</p>
 		<div class="description">
 			At the moment, I'm concerned with two questions:
@@ -58,7 +53,8 @@ import { Image } from '@astrojs/image/components';
 				body="This website is an active project! Check out my progress here."
 			/>
 			<Card
-				href="assets/Resume.pdf"
+				href="./assets/Resume.pdf"
+				target="_blank"
 				title="Resumé"
 				body="If you're a recruiter (or just curious!), my resumé is one click away."
 			/>
@@ -66,6 +62,12 @@ import { Image } from '@astrojs/image/components';
 				href="./blog/"
 				title="Blog"
 				body="This blog populates based on entries from my CMS! Currently just testing."
+			/>
+			<Card
+				href="https://calendly.com/jkintana/30min"
+				target="_blank"
+				title="Schedule a Meeting"
+				body="Want to meet up? Let me know through this Calendly link."
 			/>
 		</ul>
 	</main>
@@ -118,6 +120,13 @@ import { Image } from '@astrojs/image/components';
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
+		animation: gradientshift 15s ease-in-out;
+  	animation-iteration-count: infinite;
+	}
+	@keyframes gradientshift {
+  	from { background-size: 100%; background-position: 0%;}
+		50% { background-size: 50%; background-position: -100%; }
+  	to { background-size: 100%; background-position: 0%;}
 	}
 	.description {
 		line-height: 1.6;

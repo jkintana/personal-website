@@ -1,18 +1,18 @@
 ---
 export interface Props {
+	href: string;
+	target?: string;
 	title: string;
 	body: string;
-	href: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, target, title, body } = Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href}>
+	<a href={href} target={target || "_self"}>
 		<h2>
 			{title}
-			<span>&rarr;</span>
 		</h2>
 		<p>
 			{body}
