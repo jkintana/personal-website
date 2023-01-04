@@ -25,6 +25,10 @@ const { title } = Astro.props;
 		--accent2: 86, 22, 138;
 		--accent1-gradient: linear-gradient(135deg, rgba(var(--main)), 20%, rgba(var(--accent1)));
 		--accent1-gradient-negative: linear-gradient(135deg, rgba(var(--accent1)), 20%, rgba(var(--main)));
+
+		--square-size: 15px;
+		--square-gap: 5px;
+		--week-width: calc(var(--square-size) + var(--square-gap));
 	}
 	html {
 		font-family: system-ui, sans-serif;
