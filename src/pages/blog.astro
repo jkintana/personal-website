@@ -1,17 +1,26 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import Card from '@components/Card.astro';
-import { getBlogPosts } from '@util/contentful';
+import Layout from "@layouts/Layout.astro";
+import Card from "@components/Card.astro";
+import { getBlogPosts } from "@util/contentful";
 
 const posts = await getBlogPosts();
 ---
+
 <Layout title="JK - Blog">
   <main>
-    <!-- <form>
-      <input type='text'>
-      <input type='submit'>
-    </form> -->
-    <ul class='link-card-grid'>
+    <form>
+      <p>ⓘ The blog is currently set to <b>private</b>.</p>
+      <p>Please enter password to continue.</p>
+      <input id="password" type="text" />
+      <input id="submit" type="submit" value="Submit"/>
+      <p>
+        If you do not have a password, generate one <a
+          href="https://neal.fun/password-game/">here</a
+        >.
+      </p>
+      <a href="/">Back</a>
+    </form>
+    <!-- <ul class="link-card-grid">
       {posts.map((post) => (
         <Card
           href={'/blog/' + post.slug || './'}
@@ -19,23 +28,53 @@ const posts = await getBlogPosts();
           body={post.description || 'Error: Description Not Found'}
         />
       ))}
-      <Card
-        href="../"
-        title="Back"
-        body=""
-      />
-    </ul>
+      <Card href="../" title="Back" body="" />
+    </ul> -->
   </main>
 </Layout>
 
 <style>
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 24rem;
+    padding: 1rem;
+    border: 1px solid red;
+    border-radius: 0.5rem;
+  }
+
+  #password {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid red;
+  }
+
+  #submit {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    border: 1px solid red;
+  }
+
+  #submit:hover {
+    background-color: red;
+    color: white;
+  }
+
   ul {
-		list-style: none;
-		padding-left: 0px;
-	}
+    visibility: hidden;
+    list-style: none;
+    padding-left: 0px;
+  }
   .link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 0.5rem;
-	}
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 0.5rem;
+  }
 </style>

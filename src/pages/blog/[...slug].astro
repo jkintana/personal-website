@@ -1,7 +1,7 @@
 ---
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import Layout from "@layouts/Layout.astro";
-import { BlogPost, getBlogPosts } from "@util/contentful";
+import { getBlogPosts } from "@util/contentful";
 
 export async function getStaticPaths() {
   const blogPosts = await getBlogPosts();
@@ -21,7 +21,9 @@ const { content, title, date } = Astro.props;
 ---
 <Layout title={ title }>
   <main>
-    <h1>The blog format is still a work in progress!</h1>
+    <a href="/blog">⇐ Back</a>
+    <h1>{ title }</h1>
+    <h3>Last updated: { date }</h3>
     <article set:html={ content }></article>
   </main>
 </Layout>
