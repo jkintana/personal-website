@@ -8,7 +8,7 @@ const posts = await getBlogPosts();
 
 <Layout title="JK - Blog">
   <main>
-    <form>
+    <!-- <form>
       <p>ⓘ The blog is currently set to <b>private</b>.</p>
       <p>Please enter password to continue.</p>
       <input id="password" type="text" />
@@ -19,8 +19,8 @@ const posts = await getBlogPosts();
         >.
       </p>
       <a href="/">Back</a>
-    </form>
-    <!-- <ul class="link-card-grid">
+    </form> -->
+    <ul class="link-card-grid">
       {posts.map((post) => (
         <Card
           href={'/blog/' + post.slug || './'}
@@ -29,7 +29,7 @@ const posts = await getBlogPosts();
         />
       ))}
       <Card href="../" title="Back" body="" />
-    </ul> -->
+    </ul>
   </main>
 </Layout>
 
@@ -68,7 +68,7 @@ const posts = await getBlogPosts();
   }
 
   ul {
-    visibility: hidden;
+    /* visibility: hidden; */
     list-style: none;
     padding-left: 0px;
   }
