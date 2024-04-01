@@ -1,0 +1,31 @@
+---
+---
+
+<div class="header">
+  <a href="/" >Home</a>
+  <a href="../blog/">Blog</a>
+  <a href="../assets/Resume.pdf" target="_blank">Resumé</a>
+</div>
+
+<style>
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        border-bottom: 1px dashed black;
+    }
+    @media (max-width: 850px) {
+      .header {
+        padding: 15px 20px;
+      }
+    }
+    a {
+      color: rgb(var(--main));
+      text-decoration: none;
+      font-weight: bold;
+      font-size: large;
+    }
+</style>

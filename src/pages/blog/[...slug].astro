@@ -21,9 +21,9 @@ const { content, title, date } = Astro.props;
 ---
 <Layout title={ title }>
   <main>
-    <a href="/blog">⇐ Back</a>
+    <!-- <a href="/blog">⇐ Back</a> -->
     <h1>{ title }</h1>
-    <h3>Last updated: { date }</h3>
+    <h3>Updated on { date }.</h3>
     <article set:html={ content }></article>
   </main>
 </Layout>

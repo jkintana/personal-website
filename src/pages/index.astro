@@ -25,30 +25,29 @@ import { Image } from '@astrojs/image/components';
 			</div>
 		</div>
 		<p class="description">
-			At UW, I co-founded <strong><a href="https://www.leetcodeclub.org" target="_blank">LeetCode Club</a></strong> to help students advance their tech careers.<br/>
-			I'm an active member of the <strong>Wisconsin AI Safety Initiative</strong> and <strong>Effective Altruism UW-Madison</strong>.<br/>
-			Currently fascinated by learning theory, AI alignment, and cognitive science.<br/>
+			I'm a co-director of the <strong><a href="https://waisi.org" target="_blank">Wisconsin AI Safety Initiative</a></strong> and manage the website for <strong><a href="https://eauw.org" target="_blank">Effective Altruism UW-Madison</a></strong>.
+			I co-founded <strong><a href="https://www.leetcodeclub.org" target="_blank">LeetCode Club</a></strong> to help students advance their tech careers.<br/><br/>
+			I'm fascinated by AI alignment and ways to effectively learn things.
 		</p>
 		<div class="description">
-			At the moment, I'm concerned with these questions:
-			<br/>
-			<ul>
+			At the moment, I'm concerned with these questions:<br/>
+			<ol>
 				<li>
-					1. How can I <a href="https://80000hours.org/key-ideas/">do the most good</a> in my lifetime?
+					How can I <a href="https://80000hours.org/key-ideas/">do the most good</a> in my lifetime?
 				</li>
 				<li>
-					2. What is <a href="https://icanstudy.com/">the most effective way to learn</a> new things?
+					What is the most effective way to learn?
 				</li>
 				<li>
-					3. When's <a href="https://www.brandonsanderson.com/">Brandon Sanderson</a> releasing his next book?
+					When's <a href="https://www.brandonsanderson.com/">Brandon Sanderson</a> releasing his next book?
 				</li>
-			</ul>
+			</ol>
 		</div>
 		<p class="description">
-			Want to get in touch? Email me at <a href="mailto:kintana@wisc.edu">
-				kintana@wisc.edu</a> or message me on <a href="https://linkedin.com/in/jkintana">LinkedIn</a>.
+			Want to get in touch? Email me at <a href="mailto:kintana@wisc.edu">kintana@wisc.edu</a>
+			or message me on <a href="https://linkedin.com/in/jkintana">LinkedIn</a>.
 		</p>
-		<ul role="list" class="link-card-grid">
+		<!-- <ul role="list" class="link-card-grid">
 			<Card
 				href="https://github.com/jkintana/personal-website/"
 				title="Source Code"
@@ -65,7 +64,7 @@ import { Image } from '@astrojs/image/components';
 				title="Blog"
 				body="This blog populates based on entries from my CMS!"
 			/>
-		</ul>
+		</ul> -->
 	</main>
 </Layout>
 
@@ -104,6 +103,7 @@ import { Image } from '@astrojs/image/components';
 		box-shadow: 10px;
 		height: 190px;
 		width: 190px;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 	}
 	.caption {
 		padding-top: 30px;
@@ -127,19 +127,11 @@ import { Image } from '@astrojs/image/components';
 	.description {
 		line-height: 1.6;
 		margin: 1rem 0;
-		border: 1px solid rgba(var(--main), 25%);
-		background-color: white;
+		border: 1px dashed black;
+		background-color: rgb(254, 254, 254);
 		padding: 1rem;
 		border-radius: 0.4rem;
 		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-	}
-	.description code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--main), 12%);
-		color: rgb(var(--main));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
 	}
 	a {
 		color: rgb(var(--main));
