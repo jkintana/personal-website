@@ -6,8 +6,8 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
-      "@util/*": ["src/util/*"],
+      "@util/*": ["archive/util/*"],
     },
-    "types": ["@astrojs/image/client"],
+    "types": ["@astro/client"],
   },
 }

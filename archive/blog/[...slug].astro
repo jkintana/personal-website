@@ -1,7 +1,7 @@
 ---
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import Layout from "@layouts/Layout.astro";
-import { getBlogPosts } from "@util/contentful";
+import { getBlogPosts } from "../util/contentful";
 
 export async function getStaticPaths() {
   const blogPosts = await getBlogPosts();

@@ -1,4 +1,4 @@
-import contentful from 'contentful'
+import { contentful } from 'contentful'
 import type { Document } from "@contentful/rich-text-types";
 
 const contentfulClient = contentful.createClient({

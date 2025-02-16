@@ -1,7 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
+import headshot from "../assets/Headshot.png";
 
 ---
 
@@ -10,7 +11,7 @@ import { Image } from '@astrojs/image/components';
 		<div class="profile-flexbox">
 			<Image
 				id='profile-photo'
-				src='/assets/Headshot.png'
+				src={headshot}
 				alt='Headshot of a college student'
 				width='190'
 				height='190'
@@ -20,51 +21,66 @@ import { Image } from '@astrojs/image/components';
 			<div class="caption">
 				<h1>Hi! I'm <span class="text-gradient">Jeremy Kintana</span>.</h1>
 				<p>
-					I'm an undergrad at the <strong>University of Wisconsin-Madison</strong>.
+					I'm an undergrad at the University of Wisconsin-Madison.
 				</p>
 			</div>
 		</div>
-		<p class="description">
-			I'm a co-director of the <strong><a href="https://waisi.org" target="_blank">Wisconsin AI Safety Initiative</a></strong> and manage the website for <strong><a href="https://eauw.org" target="_blank">Effective Altruism UW-Madison</a></strong>.
-			I co-founded <strong><a href="https://www.leetcodeclub.org" target="_blank">LeetCode Club</a></strong> to help students advance their tech careers.<br/><br/>
-			I'm fascinated by AI alignment and ways to effectively learn things.
-		</p>
 		<div class="description">
-			At the moment, I'm concerned with these questions:<br/>
+			I'm the director of the <strong><a href="https://waisi.org" target="_blank">Wisconsin AI Safety Initiative</a></strong>.
+			<br/>I co-founded <strong><a href="https://www.leetcodeclub.org" target="_blank">LeetCode Club</a></strong> to help students advance their tech careers.<br/><br/>
+			At the moment, I spend most of my time around the following:<br/>
 			<ol>
 				<li>
-					How can I <a href="https://80000hours.org/key-ideas/">do the most good</a> in my lifetime?
+					Studying computer science; building technical skills
 				</li>
 				<li>
-					What is the most effective way to learn?
+					Learning about <a href="https://www.aisafetybook.com/">AI safety</a> with my peers
 				</li>
 				<li>
-					When's <a href="https://www.brandonsanderson.com/">Brandon Sanderson</a> releasing his next book?
+					Writing short things like <a href="https://jeremykintana.substack.com/p/bitrate-4b9">this sci-fi story</a>
+				</li>
+				<li>
+					Reading <a href="https://jeremykintana.substack.com/p/reading-list">whatever I feel like</a>
+				</li>
+			</ol>
+		</div>
+		<div class="description">
+			Here's something fun: I have a 6-0 hackathon record!
+			<ol>
+				<li>
+					<a href="https://www.centeraipolicy.org/">Center for AI Policy: Congressional Exhibition of Advanced AI</a>, <b>Demo Presenter</b><br/>
+					We built a tool that showcases two dangerous AI voice capabilities: 911 dispatch line flooding and congressional call automation. We were invited to present our project to members of Congress and their staff. I'll link the project once we polish it up and present it!
+				</li>
+				<br/>
+				<li>
+					<a href="https://www.spaceappschallenge.org/nasa-space-apps-2024/find-a-team/badgers-in-space/?tab=project">NASA SpaceApps Chicago 2024</a>, <b>Global Honorable Mention & Local Best Presentation</b><br/>
+					We built an <a href="https://shoebills-in-space.web.app/">interactive 3D star map</a> to see what the night sky and constellations look like from different exoplanets. We ended up being a Global Honorable Mention, meaning we were in the top 60 out of 15,444 teams and 93,520 participants, at the world's largest global hackathon!
+				</li>
+				<br/>
+				<li>
+					<a href="https://github.com/MaxMaeder/BadgerVision">Hack Midwest 2024</a>, <b>Pinata Enterprise Challenge Winner</b><br/>
+					We built a mobile app that puts names and emotions to faces. Definitely our most technically-involved solution — the team slept for 1 hour in a 24 hour period.
+				</li>
+				<br/>
+				<li>
+					<a href="https://www.spaceappschallenge.org/2023/find-a-team/the-intergalactic-programming-federation/?tab=project">NASA SpaceApps Chicago 2023</a>, <b>Global Nominee & Local Best Presentation</b><br/>
+					We built a space sonification webapp, transforming star data into sounds using computer vision. Lots of data wrangling for this one.
+				</li>
+				<br/>
+				<li>
+					<a href="https://devpost.com/software/open-accessibility-aei3xm">MadHacks 2023</a>, <b>1st Place</b><br/>
+					We built a visual accessibility Chrome extension. We were a team of three and we won four 55" TVs. We lived in the dorms freshman year, so we had no idea where to put them.
+				</li>
+				<br/>
+				<li>
+					<a href="https://devpost.com/software/mvhs-clubsnow">MVHacks 4.5</a>, <b>Best Beginner Hack</b><br/>
+					We built a club meeting aggregator website for our high school. Mostly flailing around with HTML and CSS, but we learned a lot!
 				</li>
 			</ol>
 		</div>
 		<p class="description">
-			Want to get in touch? Email me at <a href="mailto:kintana@wisc.edu">kintana@wisc.edu</a>
-			or message me on <a href="https://linkedin.com/in/jkintana">LinkedIn</a>.
+			Let's chat! Find me on <a href="https://linkedin.com/in/jkintana">LinkedIn</a> or email me at <a href="mailto:kintana@wisc.edu">kintana@wisc.edu</a>.
 		</p>
-		<!-- <ul role="list" class="link-card-grid">
-			<Card
-				href="https://github.com/jkintana/personal-website/"
-				title="Source Code"
-				body="This website is an active project! Check out my progress here."
-			/>
-			<Card
-				href="./assets/Resume.pdf"
-				target="_blank"
-				title="Resumé"
-				body="If you're a recruiter (or just curious!), my resumé is one click away."
-			/>
-			<Card
-				href="./blog/"
-				title="Blog"
-				body="This blog populates based on entries from my CMS!"
-			/>
-		</ul> -->
 	</main>
 </Layout>
 

@@ -1,25 +1,13 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
-import { getBlogPosts } from "@util/contentful";
+import { getBlogPosts } from "../../archive/util/contentful";
 
 const posts = await getBlogPosts();
 ---
 
-<Layout title="JK - Blog">
+<Layout title="JK | Blog">
   <main>
-    <!-- <form>
-      <p>ⓘ The blog is currently set to <b>private</b>.</p>
-      <p>Please enter password to continue.</p>
-      <input id="password" type="text" />
-      <input id="submit" type="submit" value="Submit"/>
-      <p>
-        If you do not have a password, generate one <a
-          href="https://neal.fun/password-game/">here</a
-        >.
-      </p>
-      <a href="/">Back</a>
-    </form> -->
     <ul class="link-card-grid">
       {posts.map((post) => (
         <Card
@@ -28,7 +16,6 @@ const posts = await getBlogPosts();
           body={post.description || 'Error: Description Not Found'}
         />
       ))}
-      <!-- <Card href="../" title="Back" body="" /> -->
     </ul>
   </main>
 </Layout>
